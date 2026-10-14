@@ -21,7 +21,7 @@ def book_class(member_id, class_name, attendance_log=None):
 def cancel_booking(member_id, class_name):
     try:
         rosters[class_name].remove(member_id)
-    except:
+    except (KeyError, ValueError):
         print("Nothing to cancel")
 
 def set_capacity(class_name, seats):
