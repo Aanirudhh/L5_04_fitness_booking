@@ -80,7 +80,8 @@ def main():
     add_members("Spin", 3)
     cancel_booking("M9", "Boxing")
 
-    raw_input = input("How many walk-in guests for HIIT? (Enter for 1): ") or "1"
+    prompt = "How many walk-in guests for HIIT? (Enter for 1): "
+    raw_input = input(prompt) or "1"
     try:
         guest_count = int(raw_input)
     except ValueError:
