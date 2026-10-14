@@ -25,6 +25,9 @@ def cancel_booking(member_id, class_name):
         print("Nothing to cancel")
 
 def set_capacity(class_name, seats):
+    if seats <= 0:
+        print("Capacity must be positive, ignoring:", seats)
+        return
     class_capacity[class_name] = seats
 
 def addMembers(class_name, count):
