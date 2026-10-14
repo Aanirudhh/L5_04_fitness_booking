@@ -9,6 +9,9 @@ rosters = {}
 def book_class(member_id, class_name, attendance_log=None):
     if attendance_log is None:
         attendance_log = []
+    if class_name not in class_capacity:
+        print("Unknown class:", class_name)
+        return False
     if class_name not in rosters:
         rosters[class_name] = []
     if len(rosters[class_name]) >= class_capacity.get(class_name, 0):
