@@ -1,5 +1,6 @@
 import json
 import os
+import glob
 
 # Global state
 class_capacity = {"Yoga": 3, "HIIT": 2, "Spin": 4}
@@ -33,7 +34,8 @@ def export_roster(file="gym_schedule.json"):
     json.dump(rosters, f)
 
 def clear_old_exports(prefix="old_"):
-    os.system("rm -f " + prefix + "*.json")
+    for path in glob.glob(f"{prefix}*.json"):
+        os.remove(path)
 
 def show_rosters():
     for c in rosters:
