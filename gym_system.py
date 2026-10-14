@@ -9,7 +9,7 @@ rosters = {}
 def book_class(member_id, class_name, attendance_log=[]):
     if class_name not in rosters:
         rosters[class_name] = []
-    if len(rosters[class_name]) > class_capacity.get(class_name, 0):
+    if len(rosters[class_name]) >= class_capacity.get(class_name, 0):
         print("Class full:", class_name)
         return False
     rosters[class_name].append(member_id)
