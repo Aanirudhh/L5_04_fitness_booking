@@ -6,7 +6,9 @@ import glob
 class_capacity = {"Yoga": 3, "HIIT": 2, "Spin": 4}
 rosters = {}
 
-def book_class(member_id, class_name, attendance_log=[]):
+def book_class(member_id, class_name, attendance_log=None):
+    if attendance_log is None:
+        attendance_log = []
     if class_name not in rosters:
         rosters[class_name] = []
     if len(rosters[class_name]) >= class_capacity.get(class_name, 0):
